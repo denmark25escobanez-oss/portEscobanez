@@ -1,0 +1,204 @@
+/* --- 1. Variables & Global --- */
+:root {
+  --bg-dark: #121418;       /* Deep matte black/grey */
+  --accent-yellow: #ffc107; /* The signature golden yellow */
+  --text-white: #ffffff;
+  --text-muted: #a0a0a0;
+  --nav-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  overflow-x: hidden;
+}
+
+/* --- 2. Layout Structure --- */
+.portfolio-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- 3. Navbar (Ozlan Style) --- */
+.navbar {
+  height: var(--nav-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-circle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-yellow);
+  text-transform: none;
+  /* Removed the circle border to match the text-only Ozlan logo */
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links li {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  color: var(--text-white);
+  transition: color 0.3s;
+}
+
+.nav-links li:hover {
+  color: var(--accent-yellow);
+}
+
+/* --- 4. Hero Section --- */
+/* We replace .left-side and .right-side with a flex container */
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding-bottom: 50px;
+}
+
+.hero-text {
+  flex: 1;
+  z-index: 2;
+}
+
+.hero-text h3 {
+  color: var(--accent-yellow);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-text h3::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background-color: var(--accent-yellow);
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+  color: var(--accent-yellow);
+}
+
+.hero-text p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 450px;
+  margin-bottom: 40px;
+}
+
+/* --- 5. Profile Image Section --- */
+.right-side-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.right-side-image img {
+  max-width: 550px;
+  height: auto;
+  filter: grayscale(100%) contrast(110%); /* Matches the B&W photo style */
+  z-index: 1;
+}
+
+/* Background Texture/Shadow match */
+.right-side-image::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,193,7,0.05) 0%, transparent 70%);
+  bottom: 10%;
+  right: 0;
+  z-index: 0;
+}
+
+/* --- 6. Buttons & Elements --- */
+.hire-btn {
+  background-color: var(--accent-yellow);
+  color: var(--bg-dark);
+  border: none;
+  padding: 14px 35px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.hire-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Bottom Social Icons Placeholder */
+.social-sidebar {
+  position: absolute;
+  bottom: 40px;
+  left: 10%;
+  display: flex;
+  gap: 20px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* --- 7. Responsive Fix --- */
+@media (max-width: 1024px) {
+  .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    margin: 0 auto 30px;
+  }
+
+  .right-side-image {
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .right-side-image img {
+    max-width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
