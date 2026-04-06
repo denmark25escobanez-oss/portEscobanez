@@ -107,8 +107,8 @@ function App() {
               <p className="resume-tagline highlight-pink">Software Developer</p>
 
               <p className="resume-short-bio">
-                Driven by curiosity and a 'galang kalye' spirit, I approach software development with a unique blend of street-smart grit and technical precision.
-              </p>
+                Driven by relentless curiosity and a 'galang kalye' spirit, I approach software development with a unique blend of street-smart grit and technical precision. I don’t just write code; I navigate complex digital landscapes with the same adaptability and resourcefulness I learned from the streets. Whether its architecting a scalable backend or troubleshooting a stubborn bug, I bring a hands-on, 'find-a-way' attitude to every project, ensuring that the solutions I build are as robust as they are innovative.
+                </p>
             </div>
 
             <div className="resume-grid-columns">
@@ -249,8 +249,7 @@ function App() {
             <div className="header-underline" style={{ width: '60px', height: '4px', background: 'linear-gradient(90deg, #ff007a, #7000ff)', marginTop: '10px', borderRadius: '2px' }}></div>
           </div>
 
-          <div className="contact-grid">
-           
+          <div className="contact-grid">  
             <div className="contact-info-side">
               <div className="info-card">
                 <div className="info-icon"><i className="fas fa-envelope"></i></div>
